@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				position: relative;
+				border: 2px dashed red;
+				height: 100vh;
+			}
+			.children {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: sticky;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, repellendus?</p>
+		<div class="box">
+			<div class="children">children</div>
+		</div>
+		<p>Cuộn xuống để thấy hiệu ứng của `sticky`</p>
+		<p style="height: 2500px"></p>
+	</body>
+</html>
