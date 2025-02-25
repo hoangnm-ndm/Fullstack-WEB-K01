@@ -1,0 +1,28 @@
+.btn {
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.btn.btn--small {
+	padding: 5px 10px;
+	font-size: 14px;
+}
+
+.btn.btn--big {
+	padding: 10px 24px;
+	font-size: 22px;
+}
+
+.btn.btn--primary {
+	background-color: #f00;
+}
+
+.btn.btn--secondary {
+	background-color: #00f;
+}
