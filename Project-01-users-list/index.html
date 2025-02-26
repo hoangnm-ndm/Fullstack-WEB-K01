@@ -6,36 +6,202 @@
 		<link rel="icon" type="image/x-icon" href="./imgs/user-1.svg" />
 		<title>Users list</title>
 		<style>
-			.container {
-				border: 2px solid red;
-				height: 100px;
-				display: flex;
-				/* flex-direction: row; */
-				/* flex-direction: column; */
-				/* flex-direction: row-reverse; */
-				/* flex-direction: column-reverse; */
-				justify-content: space-between;
-				align-items: center;
-				flex-wrap: wrap;
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
 			}
 
-			.item {
-				border: 2px dashed blue;
-				width: 30px;
+			.container {
+				padding: 100px;
+			}
+
+			h1 {
+				margin-bottom: 24px;
+			}
+
+			.nav {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 74px;
+			}
+
+			.search {
+				padding: 12px;
+				display: inline-block;
+			}
+
+			ul {
+				display: flex;
+				justify-content: flex-end;
+				flex-wrap: wrap;
+				list-style-type: none;
+			}
+
+			a {
+				text-decoration: none;
+				padding: 16px;
+				font-size: 16px;
+				color: #151b32;
+				border-radius: 8px;
+			}
+			a:hover {
+				background-color: #849fff;
+				color: #fff;
+			}
+
+			input {
+				padding: 16px;
+				border-radius: 4px;
+				border: 1px solid #bfc8e5;
+				width: 327px;
+				max-width: 100%;
+			}
+
+			input::placeholder {
+				color: red;
+			}
+
+			.user-list {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
+				gap: 16px;
+			}
+
+			.user-item {
+				border: 1px solid transparent;
+				border-radius: 16px;
+				padding: 24px;
+				display: flex;
+				gap: 16px;
+				width: 327px;
+				max-width: 100%;
+				background-color: #fbfcff;
+			}
+
+			.user-item:hover {
+				border: 1px solid #bfc8e5;
+			}
+
+			span {
+				display: inline-block;
+				padding: 2px 4px;
+				border: 1px solid #849fff;
+				background-color: #fff;
+				color: #849fff;
+				border-radius: 10px;
+				font-size: 12px;
+				transition: all ease-in-out 0.3s;
+			}
+
+			span:hover {
+				background-color: #849fff;
+				color: #fff;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="container">
-			<div class="item">Item 1</div>
-			<div class="item">Item 2</div>
-			<div class="item">Item 3</div>
-			<div class="item">Item 3</div>
-			<div class="item">Item 3</div>
-			<div class="item">Item 3</div>
-			<div class="item">Item 3</div>
-			<div class="item">Item 3</div>
-			<div class="item">Item 3</div>
+			<h1>Users</h1>
+			<nav class="nav">
+				<input type="text" class="search" placeholder="Search..." />
+				<ul>
+					<li><a href="#">Reputation</a></li>
+					<li><a href="#">New users</a></li>
+					<li><a href="#">Voters</a></li>
+					<li><a href="#">Editors</a></li>
+					<li><a href="#">Moderators</a></li>
+				</ul>
+			</nav>
+
+			<section class="user-list">
+				<div class="user-item">
+					<img src="./imgs/user-1.svg" alt="" />
+					<div class="user-content">
+						<h2>Hoang</h2>
+						<p class="user-address">VN</p>
+						<p class="tags">
+							<span>clothers</span>
+						</p>
+					</div>
+				</div>
+
+				<div class="user-item">
+					<img src="./imgs/user-1.svg" alt="" />
+					<div class="user-content">
+						<h2>Hoang Nguyen</h2>
+						<p class="user-address">Bac Giang VN</p>
+						<p class="tags">
+							<span>clothers</span>
+							<span>javascript</span>
+							<span>python</span>
+							<span>html</span>
+							<span>html</span>
+							<span>html</span>
+							<span>html</span>
+							<span>html</span>
+							<span>html</span>
+							<span>html</span>
+							<span>html</span>
+							<span>html</span>
+						</p>
+					</div>
+				</div>
+				<div class="user-item">
+					<img src="./imgs/user-1.svg" alt="" />
+					<div class="user-content">
+						<h2>Hoang Nguyen</h2>
+						<p class="user-address">Bac Giang VN</p>
+						<p class="tags">
+							<span>clothers</span>
+							<span>javascript</span>
+							<span>python</span>
+							<span>html</span>
+						</p>
+					</div>
+				</div>
+				<div class="user-item">
+					<img src="./imgs/user-1.svg" alt="" />
+					<div class="user-content">
+						<h2>Hoang Nguyen</h2>
+						<p class="user-address">Bac Giang VN</p>
+						<p class="tags">
+							<span>clothers</span>
+							<span>javascript</span>
+							<span>python</span>
+							<span>html</span>
+						</p>
+					</div>
+				</div>
+				<div class="user-item">
+					<img src="./imgs/user-1.svg" alt="" />
+					<div class="user-content">
+						<h2>Hoang Nguyen</h2>
+						<p class="user-address">Bac Giang VN</p>
+						<p class="tags">
+							<span>clothers</span>
+							<span>javascript</span>
+							<span>python</span>
+							<span>html</span>
+						</p>
+					</div>
+				</div>
+				<div class="user-item">
+					<img src="./imgs/user-1.svg" alt="" />
+					<div class="user-content">
+						<h2>Hoang Nguyen</h2>
+						<p class="user-address">Bac Giang VN</p>
+						<p class="tags">
+							<span>clothers</span>
+							<span>javascript</span>
+							<span>python</span>
+							<span>html</span>
+						</p>
+					</div>
+				</div>
+			</section>
 		</div>
 	</body>
 </html>
