@@ -43,6 +43,8 @@ a {
 	font-size: 16px;
 	color: #151b32;
 	border-radius: 8px;
+	display: inline-block;
+	transition: all ease-in-out 0.3s;
 }
 a:hover {
 	background-color: #849fff;
