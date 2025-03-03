@@ -41,13 +41,20 @@ header {
 	background: transparent;
 }
 
+.sub-menu {
+	display: none;
+}
+
 .menu a:hover {
 	border: 1px solid #dde1f9;
 	background: #eff1ff;
 }
 
-.sub-menu {
-	display: none;
+.menu > li:hover > .sub-menu {
+	display: block;
+	position: absolute;
+	background: #eff1ff;
+	border: 1px solid #dde1f9;
 }
 
 .user a {
