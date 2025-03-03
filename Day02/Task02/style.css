@@ -57,6 +57,17 @@ header {
 	border: 1px solid #dde1f9;
 }
 
+.sub-menu a {
+	display: inline-block;
+	padding: 12px;
+}
+
+.sub-menu__box {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
 .user a {
 	display: inline-block;
 	padding: 20px 25px;
