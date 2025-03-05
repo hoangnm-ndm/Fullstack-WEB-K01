@@ -1,0 +1,24 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+.product-card {
+	display: flex;
+	gap: 32px;
+	align-items: flex-start;
+	margin: 100px auto 0;
+	width: 887px;
+	border: 2px solid blue;
+	padding: 82px;
+}
+
+.product-card > * {
+	border: 1px dashed red;
+}
+
+.product-img {
+	width: 249px;
+	max-width: 100%;
+}
