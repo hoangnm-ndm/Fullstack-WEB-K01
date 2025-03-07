@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Position</title>
+		<style>
+			* {
+				box-sizing: border-box;
+				padding: 0;
+				margin: 0;
+			}
+			.box {
+				border: 2px solid rgb(184, 127, 127);
+				background-color: yellow;
+				width: 200px;
+				height: 200px;
+				position: relative;
+				/* relative: dich chuyen phan tu so voi chinh vi tri ban dau cua phan tu */
+			}
+
+			.item {
+				border: 2px dotted blue;
+				background-color: pink;
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translate(50%, -50%);
+			}
+			.content {
+				position: absolute;
+				bottom: 0;
+				left: -20px;
+				background-color: #fff;
+				width: 120px;
+				height: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="item">item 1</div>
+			<div class="content">
+				<h2>UI teacher</h2>
+				<div class="start"></div>
+			</div>
+		</div>
+	</body>
+</html>
