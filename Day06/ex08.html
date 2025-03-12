@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Grid area</title>
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+			}
+
+			body {
+				display: grid;
+				grid-template-areas:
+					"header header header"
+					"sidebar main main"
+					"footer footer footer";
+				/* Các cột cách nhau bởi dấu cách */
+				/* Các dòng cách nhau bởi "" */
+				gap: 24px;
+			}
+
+			header {
+				background-color: gray;
+				grid-area: header;
+				padding: 40px;
+			}
+
+			.sidebar {
+				background-color: yellow;
+				grid-area: sidebar;
+			}
+
+			main {
+				background-color: aquamarine;
+				grid-area: main;
+			}
+
+			footer {
+				background-color: gray;
+				grid-area: footer;
+				padding: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>header</header>
+		<div class="sidebar">sidebar</div>
+		<main>
+			<h1>Danh sach san pham</h1>
+			<div class="product-list">
+				<div class="product-item">1</div>
+				<div class="product-item">2</div>
+				<div class="product-item">3</div>
+				<div class="product-item">4</div>
+				<div class="product-item">5</div>
+			</div>
+		</main>
+		<footer>footer</footer>
+	</body>
+</html>
