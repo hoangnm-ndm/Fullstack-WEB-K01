@@ -1,0 +1,38 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+}
+
+.collection-cover {
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 24px;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 64px;
+}
+
+.collection-item {
+	flex: 1 1 380px;
+}
+
+.collection-sub__item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 24px;
+}
+
+.collection-sub__item > img {
+	width: 110px;
+	display: inline-block;
+	flex: 1 1 110px;
+}

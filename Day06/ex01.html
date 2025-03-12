@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+
+			.container {
+				width: 100%;
+				border: 2px solid red;
+				display: flex;
+				align-items: stretch;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				gap: 12px;
+			}
+
+			.item {
+				border: 2px dotted blue;
+				background-color: green;
+				width: 110px;
+				/* flex-shrink: 1;
+				flex-grow: 1;
+				flex-basis: 110px; */
+				flex: 1 1 110px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item">item1</div>
+			<div class="item">item1 Lorem ipsum dolor sit.</div>
+			<div class="item">item1</div>
+			<div class="item">item1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, veniam.</div>
+			<div class="item">item1</div>
+			<div class="item">item1</div>
+			<div class="item">item1</div>
+		</div>
+	</body>
+</html>
