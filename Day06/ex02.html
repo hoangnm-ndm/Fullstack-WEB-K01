@@ -16,11 +16,12 @@
 				border: 2px solid red;
 				display: grid;
 				/* grid-template-columns: 1fr 1fr 1fr; */
-				grid-template-columns: repeat(3, 1fr);
+				/* grid-template-columns: repeat(3, 1fr 2fr); */
+				grid-template-columns: repeat(4, minmax(100px, 1fr));
 				grid-template-rows: auto;
 				row-gap: 32px;
 				column-gap: 24px;
-				/* ! fr =  fractional */
+				/* ! fr =  fraction */
 			}
 
 			.item {
@@ -32,14 +33,15 @@
 	<body>
 		<div class="container">
 			<div class="item">item1</div>
-			<div class="item">item1 Lorem ipsum dolor sit.</div>
+			<div class="item">item1 Loresit.</div>
 			<div class="item">item1</div>
-			<div class="item">item1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, veniam.</div>
+			<div class="item">item1 veniam.</div>
 			<div class="item">item1</div>
 			<div class="item">item1</div>
-			<div class="item">item1cvcv cvcvcvcvcvc</div>
+			<div class="item">item1cvcv</div>
 			<div class="item">item1</div>
-			<div class="item">item1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, iusto.</div>
+			<div class="item">item1 Lorem.</div>
+			<div class="item">item1</div>
 			<div class="item">item1</div>
 			<div class="item">item1</div>
 			<div class="item">item1</div>
