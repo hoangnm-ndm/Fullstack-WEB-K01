@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<style>
+			body {
+				background-color: tan;
+				color: black;
+			}
+
+			/* Áp dụng với độ rộng màn hình nhỏ hơn hoặc bằng 992px */
+			@media screen and (max-width: 992px) {
+				body {
+					background-color: blue;
+					color: white;
+				}
+			}
+
+			/* Áp dụng với độ rộng màn hình nhỏ hơn hoặc bằng 600px */
+			@media screen and (max-width: 600px) {
+				body {
+					background-color: olive;
+					color: white;
+				}
+			}
+
+			/* Áp dụng khi trang web được in */
+			@media only print {
+				body {
+					background-color: white;
+					color: black;
+				}
+			}
+		</style>
+
+		<h2>Thay đổi kích thước màn hình để thấy màu nền và màu chữ thay đổi!</h2>
+		<p>Bạn cũng có thể chọn thử chế độ in trang web để thấy sự thay đổi.</p>
+	</body>
+</html>
