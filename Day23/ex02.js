@@ -14,10 +14,22 @@ for (let i = 0; i < data.length; i++) {
 	}
 }
 
-data.forEach((item) => {
+// * href = "http://127.0.0.1:5501/iphone-16-pro-max-1"
+/**
+ * * Tạo ra một mảng sản phẩm bổ sung thuộc tính slug.
+ * * Bọc thẻ h2 của sản phẩm trong thẻ a.
+ * * Bổ sung href cho thẻ a với slug
+ */
+
+const newData = data.map((item) => ({
+	...item,
+	slug: `${item.name.toLocaleLowerCase().replaceAll(" ", "-")}-${item.id}`,
+}));
+
+newData.forEach((item) => {
 	let liElement = document.createElement("li");
-	liElement.innerHTML = `
-    <h2>${item.name}</h2>
+	liElement.innerHTML = /*html*/ `
+    <a href="/${item.slug}"><h2>${item.name}</h2></a>
     <p>${item.price}</p>
   `;
 	if (item.price === maxPrice) {
@@ -25,10 +37,3 @@ data.forEach((item) => {
 	}
 	products.appendChild(liElement);
 });
-
-// * href = "http://127.0.0.1:5501/iphone-16-pro-max-1"
-/**
- * * Tạo ra một mảng sản phẩm bổ sung thuộc tính slug.
- * * Bọc thẻ h2 của sản phẩm trong thẻ a.
- * * Bổ sung href cho thẻ a với slug
- */
