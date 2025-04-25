@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<style>
+			#grandparent {
+				width: 150px;
+				height: 150px;
+				background-color: lightblue;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			#parent {
+				width: 100px;
+				height: 100px;
+				background-color: lightcoral;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			#child {
+				background-color: lightgreen;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+
+		<div id="grandparent">
+			<div id="parent">
+				<button id="child">Click me</button>
+			</div>
+		</div>
+
+		<script>
+			const child = document.getElementById("child");
+			const parent = document.getElementById("parent");
+			const grandparent = document.getElementById("grandparent");
+
+			child.addEventListener(
+				"click",
+				function () {
+					event.stopPropagation();
+					console.log("Child clicked!");
+				},
+				true
+			);
+
+			parent.addEventListener(
+				"click",
+				function () {
+					event.stopPropagation();
+					console.log("Parent clicked!");
+				},
+				true
+			);
+
+			grandparent.addEventListener(
+				"click",
+				function () {
+					event.stopPropagation();
+					console.log("Grandparent clicked!");
+				},
+				true
+			);
+		</script>
+	</body>
+</html>
