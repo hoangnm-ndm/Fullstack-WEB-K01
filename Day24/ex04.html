@@ -31,24 +31,33 @@
 		<form action="" id="registerForm">
 			<div class="mb-3">
 				<label for="email" name="email" class="form-label">Email</label>
-				<input class="form-control" type="email" />
+				<input name="email" class="form-control" type="email" />
 			</div>
 
 			<div class="mb-3">
 				<label for="password" name="password" class="form-label">Password</label>
-				<input class="form-control" type="password" />
+				<input name="password" class="form-control" type="password" />
 			</div>
 
 			<div class="mb-3">
-				<label for="gender" name="gender" class="form-label">Gender</label>
+				<label for="gender" name="gender" class="form-label">Gender: </label>
+				<label for=""><input type="radio" value="1" name="gender" /> Male</label>
+				<label for=""><input type="radio" value="2" name="gender" /> Female</label>
+				<label for=""><input type="radio" value="3" name="gender" /> Other</label>
 			</div>
 
 			<div class="mb-3">
 				<label for="major" name="major" class="form-label">Major</label>
+				<select name="major" id="" required>
+					<option>Choose one</option>
+					<option value="1">Designer</option>
+					<option value="2">Tester</option>
+					<option value="3">Developer</option>
+				</select>
 			</div>
 
 			<div class="mb-3">
-				<input class="form-control" type="checkbox" name="terms" id="" />
+				<input type="checkbox" name="terms" id="" required />
 				<span>Tôi đã đọc kỹ và đồng ý với các chính sách và điều khoản đã đặt ra.</span>
 			</div>
 
@@ -56,5 +65,7 @@
 				<button class="btn btn-primary w-100">Register</button>
 			</div>
 		</form>
+
+		<script src="./ex04.js"></script>
 	</body>
 </html>
