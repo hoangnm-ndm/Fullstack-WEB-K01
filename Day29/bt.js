@@ -50,8 +50,9 @@ previewEle.addEventListener("click", function () {
 
 nextEle.addEventListener("click", function () {
 	// * tăng 1 page. page++
-	pageMax = totalProducts / limit;
-	if (page < pageMax) {
+	pageMax = (totalProducts / limit).toFixed();
+	console.log(typeof pageMax);
+	if (page < +pageMax) {
 		page++;
 		currentPageEle.innerText = page;
 		skip = (page - 1) * limit;
