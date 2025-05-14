@@ -15,14 +15,22 @@ function App() {
 				{/* <SideBar />
 				<HomePage /> */}
 				<div>
-					<Button size="small" color="red">
-						Click Me
+					<Button size="big" variant="primary">
+						Nut bam chinh tren web
 					</Button>
-					<Button size="medium" color="blue">
+					<Button size="medium" variant="secondary">
+						Secondary
+					</Button>
+					<Button size="big" variant="warning">
+						Canh bao
+					</Button>
+
+					<Button size="small" variant="success">
 						Login
 					</Button>
-					<Button size="big" color="green">
-						Register
+
+					<Button size={"small"} variant={"danger"}>
+						Delete
 					</Button>
 				</div>
 			</main>
