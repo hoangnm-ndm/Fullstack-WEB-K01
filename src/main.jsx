@@ -41,11 +41,7 @@ function App2() {
  **	- children: các thẻ con bên trong thẻ html hoặc là content của thẻ.
  */
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>
-);
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 
 // const appElement = document.getElementById("root");
 // const virtualDOM = ReactDOM.createRoot(appElement);

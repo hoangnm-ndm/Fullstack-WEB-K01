@@ -87,3 +87,9 @@ footer {
 	background-color: #17a2b8;
 	color: #fff;
 }
+
+.student {
+	border-radius: 8px;
+	padding: 6px;
+	border: 1px solid #ccc;
+}
