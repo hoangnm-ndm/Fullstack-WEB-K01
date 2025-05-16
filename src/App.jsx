@@ -1,19 +1,23 @@
+import { useState } from "react";
 import "./App.css";
-import StudentList from "./components/StudentList";
-
-const students = [
-	{ id: 1, name: "Nguyen Minh Hoang", email: "hoang@gmail.com", gender: "male" },
-	{ id: 2, name: "Tran Duy Dong", email: "dong@gmail.com", gender: "male" },
-	{ id: 3, name: "Nguyen Hong Nhung", email: "hongnhung@gmail.com", gender: "female" },
-];
 
 function App() {
+	// let count = 0;
+	let [count, setCount] = useState(0);
+	const handleClick = () => {
+		setCount(count + 1);
+		console.log(count);
+	};
+
+	console.log(count);
+
 	return (
 		<>
-			<StudentList students={students} />
+			<button id="btn" onClick={handleClick}>
+				Increment {count}
+			</button>
 		</>
 	);
 }
 
 export default App;
-hnjjkxjkjsk;
