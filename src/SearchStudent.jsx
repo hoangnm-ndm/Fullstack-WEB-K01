@@ -7,12 +7,13 @@ const data = [
 ];
 
 const SearchStudent = () => {
-	// * dùng useState
 	const [students, setStudents] = useState(data);
+	const defaultStudents = [...data];
 	const handleChange = (e) => {
-		console.log(e.target.value);
-
-		// * dùng value để lọc ra người có tên thoả mãn tìm kiếm và cập nhật lại state
+		let textSearch = e.target.value.toLowerCase();
+		textSearch
+			? setStudents(students.filter((item) => item.fullname.toLowerCase().includes(textSearch)))
+			: setStudents(defaultStudents);
 	};
 
 	return (
