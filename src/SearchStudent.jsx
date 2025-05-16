@@ -17,7 +17,7 @@ const SearchStudent = () => {
 
 	return (
 		<div>
-			<input type="text" onChange={handleChange} />
+			<input type="text" placeholder="Tim sinh vien..." onChange={handleChange} />
 			<ol>
 				{students.map((item) => (
 					<li key={item.id}>{item.fullname}</li>
