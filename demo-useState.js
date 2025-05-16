@@ -5,7 +5,7 @@ function useState(initialSate) {
 		if (typeof callback === "function") {
 			state = callback(state);
 		} else {
-			state = callback;
+			state = callback; // * state + 1
 		}
 		reRender(state);
 	}
@@ -19,5 +19,8 @@ const [count, setCount] = useState(0);
 console.log("gia tri state luc khoi tao: ", count);
 
 setTimeout(() => {
-	setCount((prev) => prev + 1000);
+	setCount(count + 1);
+	setCount(count + 1);
+	setCount(count + 1);
+	setCount(count + 1);
 }, 3000);
