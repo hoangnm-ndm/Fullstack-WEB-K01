@@ -4,8 +4,7 @@ import useGetList from "./hooks/useGetList";
 // * Tách các logic filter ra. Component chỉ làm công việc của UI.
 
 const ProductList = () => {
-	const [list] = useGetList("products");
-
+	const [products] = useGetList("products");
 	return (
 		<div>
 			<h1>Danh sach san pham</h1>
@@ -18,8 +17,8 @@ const ProductList = () => {
 			</select>
 			<span> sản phẩm</span> */}
 			<div>
-				{list &&
-					list.products.map((item) => (
+				{products &&
+					products.map((item) => (
 						<div key={item.id}>
 							{item.id} - {item.title}
 						</div>

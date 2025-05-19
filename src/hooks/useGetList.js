@@ -14,9 +14,9 @@ const useGetList = (path, limit = 12, skip = 0) => {
 
 	const fetchList = async () => {
 		try {
-			const res = await api.get(`${path}?limit=${limit}&skip=${skip}`);
-			const data = await res.json();
-			setList(data);
+			console.log(`${path}?limit=${limit}&skip=${skip}`);
+			const { data } = await api.get(`${path}?limit=${limit}&skip=${skip}`);
+			setList(data[path]);
 		} catch (error) {
 			console.log(error);
 		}
