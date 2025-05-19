@@ -13,7 +13,7 @@ import useQueryParams from "./hooks/useQueryParams";
 const ProductList = () => {
 	const [params, updateParams, resetParams] = useQueryParams({
 		search: "",
-		page: 1,
+		skip: 0,
 		limit: 12,
 		sortBy: "price",
 		order: "asc",
@@ -21,11 +21,15 @@ const ProductList = () => {
 	const [products, loading, error] = useFetchListWithParams("products", params);
 
 	const handlePage = (newPage) => {
-		updateParams({ ...params, page: newPage });
+		updateParams({ ...params, skip: (newPage - 1) * params.limit });
 	};
 
 	const handleLimit = (newLimit) => {
 		updateParams({ ...params, limit: newLimit });
+	};
+
+	const handleSort = (sortBy, order) => {
+		updateParams({ ...params, sortBy, order });
 	};
 
 	if (loading) return <div>Loading...</div>;
@@ -45,12 +49,12 @@ const ProductList = () => {
 			<div>
 				{products.map((item) => (
 					<div key={item.id}>
-						{item.id} - {item.title}
+						{item.id} - {item.title} - {item.price}
 					</div>
 				))}
 			</div>
 			<button onClick={() => handlePage(params.page - 1)}>preview</button>
-			<span>{params.page}</span>
+			<span>{params.skip / params.limit + 1}</span>
 			<button onClick={() => handlePage(params.page + 1)}>next</button>
 		</div>
 	);

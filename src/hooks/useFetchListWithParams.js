@@ -19,7 +19,7 @@ import api from "../api";
 // * 	skip: 0,
 // * };
 
-const useFetchListWithParams = (path, params = {}) => {
+const useFetchListWithParams = (path, params) => {
 	const [list, setList] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
@@ -28,10 +28,8 @@ const useFetchListWithParams = (path, params = {}) => {
 		try {
 			setLoading(true);
 			let paramsString = new URLSearchParams(params).toString();
-			console.log(paramsString);
 			paramsString = paramsString.replace("search", "search?q");
 			console.log(paramsString);
-			console.log(`${path}?limit=${limit}&skip=${skip}`);
 			const { data } = await api.get(`${path}/${paramsString}`);
 			setList(data[path]);
 			setLoading(false);
