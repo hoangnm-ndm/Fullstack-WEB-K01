@@ -1,14 +1,10 @@
 import "./App.css";
-import LifeCycleExample from "./LifeCycleExample";
-import SearchStudent from "./SearchStudent";
-import SortArr from "./SortArr";
+import ProductList from "./ProductList";
 
 function App() {
 	return (
 		<>
-			{/* <SortArr /> */}
-			{/* <SearchStudent /> */}
-			<LifeCycleExample />
+			<ProductList />
 		</>
 	);
 }
