@@ -1,4 +1,5 @@
 import React from "react";
+import useFetchListWithParams from "./hooks/useFetchListWithParams";
 import useQueryParams from "./hooks/useQueryParams";
 
 // * Tách các logic filter ra. Component chỉ làm công việc của UI.
@@ -10,7 +11,22 @@ import useQueryParams from "./hooks/useQueryParams";
  */
 
 const ProductList = () => {
-	const [products, loading, error] = useQueryParams("products", params);
+	const [params, updateParams, resetParams] = useQueryParams({
+		search: "",
+		page: 1,
+		limit: 12,
+		sortBy: "price",
+		order: "asc",
+	});
+	const [products, loading, error] = useFetchListWithParams("products", params);
+
+	const handlePage = (newPage) => {
+		updateParams({ ...params, page: newPage });
+	};
+
+	const handleLimit = (newLimit) => {
+		updateParams({ ...params, limit: newLimit });
+	};
 
 	if (loading) return <div>Loading...</div>;
 	if (error) return <div>{error}</div>;
@@ -18,14 +34,14 @@ const ProductList = () => {
 	return (
 		<div>
 			<h1>Danh sach san pham</h1>
-			{/* <span>Hiển thị</span>
+			<span>Hiển thị</span>
 			<select name="limit" id="limit" onChange={handleLimit}>
 				<option value="12">12</option>
 				<option value="20">20</option>
 				<option value="50">50</option>
 				<option value="194">all</option>
 			</select>
-			<span> sản phẩm</span> */}
+			<span> sản phẩm</span>
 			<div>
 				{products.map((item) => (
 					<div key={item.id}>
@@ -33,9 +49,9 @@ const ProductList = () => {
 					</div>
 				))}
 			</div>
-			{/* <button onClick={() => handlePage("preview")}>preview</button>
-			<span>{page}</span>
-			<button onClick={() => handlePage("next")}>next</button> */}
+			<button onClick={() => handlePage(params.page - 1)}>preview</button>
+			<span>{params.page}</span>
+			<button onClick={() => handlePage(params.page + 1)}>next</button>
 		</div>
 	);
 };
