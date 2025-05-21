@@ -11,6 +11,7 @@ import OrderListPage from "../pages/admin/OrderListPage";
 import BlogListPage from "../pages/admin/BlogListPage";
 import UserListPage from "../pages/admin/UserListPage";
 import ProductListPage from "../pages/admin/ProductListPage";
+import SettingsPage from "../pages/admin/SettingsPage";
 
 const router = createBrowserRouter([
 	// * Layout Client
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
 			{ path: "orders", element: <OrderListPage /> },
 			{ path: "blogs", element: <BlogListPage /> },
 			{ path: "users", element: <UserListPage /> },
-			// { path: "settings", element: <BlogListPage /> },
+			{ path: "settings", element: <SettingsPage /> },
 		],
 	},
 
