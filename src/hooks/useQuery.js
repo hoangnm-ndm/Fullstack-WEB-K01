@@ -8,7 +8,7 @@ const inititalParams = {
 	page: 1,
 };
 
-const useQueryParams = (query) => {
+const useQuery = (query) => {
 	const [params, setParams] = useState(query);
 
 	const resetParams = () => {
@@ -24,4 +24,4 @@ const useQueryParams = (query) => {
 	return [params, updateParams, resetParams];
 };
 
-export default useQueryParams;
+export default useQuery;

@@ -10,8 +10,8 @@ import DashBoardPage from "../pages/admin/DashBoardPage";
 import OrderListPage from "../pages/admin/OrderListPage";
 import BlogListPage from "../pages/admin/BlogListPage";
 import UserListPage from "../pages/admin/UserListPage";
-import ProductListPage from "../pages/admin/ProductListPage";
 import SettingsPage from "../pages/admin/SettingsPage";
+import CategoriesPage from "../pages/CategoriesPage";
 
 const router = createBrowserRouter([
 	// * Layout Client
@@ -21,6 +21,7 @@ const router = createBrowserRouter([
 		children: [
 			{ index: true, element: <HomePage /> },
 			{ path: "/about", element: <AboutPage /> },
+			{ path: "/categories", element: <CategoriesPage /> },
 		],
 	},
 
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
 		element: <AdminLayout />,
 		children: [
 			{ index: true, element: <DashBoardPage /> },
-			{ path: "products", element: <ProductListPage /> },
+			// { path: "products", element: <Produc /> },
 			{ path: "orders", element: <OrderListPage /> },
 			{ path: "blogs", element: <BlogListPage /> },
 			{ path: "users", element: <UserListPage /> },
