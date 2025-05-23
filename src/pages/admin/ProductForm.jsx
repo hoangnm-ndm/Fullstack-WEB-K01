@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createProduct } from "../../api/productApi";
 import FormCommon from "../../components/FormCommon";
+import { useForm } from "react-hook-form";
 
 const initFormData = {
 	title: "",
@@ -8,23 +9,16 @@ const initFormData = {
 };
 
 const ProductForm = () => {
-	const [formData, setFormData] = useState(initFormData);
-
-	const handleChange = (e) => {
-		const { name, value } = e.target;
-		// * validation ở đây
-		setFormData((prev) => ({
-			...prev,
-			[name]: value,
-		}));
-	};
-	const handleSubmit = async (event) => {
-		event.preventDefault();
-		// * Gửi dữ liệu lên server.
-		console.log(formData);
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		reset,
+	} = useForm();
+	const onSubmit = async (data) => {
 		try {
-			const data = await createProduct(formData);
-			console.log(data);
+			const res = await createProduct(data);
+			console.log(res);
 		} catch (error) {
 			console.log(error);
 		}
@@ -32,36 +26,22 @@ const ProductForm = () => {
 	return (
 		<>
 			{/* <h1>Add Product</h1> */}
-			<FormCommon handleSubmit={handleSubmit}>
+			<FormCommon handleSubmit={handleSubmit(onSubmit)}>
 				<div className="mb-3">
-					<label className="form-label" htmlFor="" name="title">
-						Title
-					</label>
-					<input
-						className="form-control"
-						name="title"
-						type="text"
-						placeholder="Product name"
-						value={formData.title}
-						onChange={handleChange}
-					/>
+					<label className="form-label">Title</label>
+					<input className="form-control" {...register("title", { required: true })} />
+					{errors.title && <span className="text-danger">Title không được bỏ trống</span>}
 				</div>
 
 				<div className="mb-3">
-					<label className="form-label" htmlFor="" name="description">
-						Description
-					</label>
-					<input
-						className="form-control"
-						name="description"
-						type="text"
-						placeholder="Product description"
-						value={formData.description}
-						onChange={handleChange}
-					/>
+					<label className="form-label">Description</label>
+					<input className="form-control" {...register("description")} />
 				</div>
 				<div className="mb-3">
-					<button className="btn btn-primary w-100">Add Product</button>
+					<button className="btn btn-primary">Add Product</button>{" "}
+					<button className="btn btn-secondary" onClick={reset}>
+						Cancel
+					</button>
 				</div>
 			</FormCommon>
 		</>
