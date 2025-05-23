@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
+import { createProduct } from "../../api/productApi";
 
 const Form = styled.form`
 	padding: 24px;
@@ -27,9 +28,16 @@ const ProductForm = () => {
 			[name]: value,
 		}));
 	};
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
+		// * Gửi dữ liệu lên server.
 		console.log(formData);
+		try {
+			const data = await createProduct(formData);
+			console.log(data);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 	return (
 		<>
