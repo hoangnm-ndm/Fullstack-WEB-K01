@@ -78,7 +78,7 @@ const ListTasks = () => {
 									onClick={() => handleCompleted(item.id, item.completed)}
 									className={item.completed ? "btn btn-success" : "btn btn-warning"}
 								>
-									{item.completed ? "completed" : "active"}
+									{item.completed ? "xong rồi nhé" : "chưa xong"}
 								</button>
 							</td>
 							<td>
