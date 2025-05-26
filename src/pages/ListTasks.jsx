@@ -1,30 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { deleteTask, getTasks, updateTask } from "../api/index";
-import { success } from "../../node_modules/zod/dist/esm/v4/classic/schemas";
+import { deleteTask, updateTask } from "../api/index";
 import { toast } from "react-toastify";
+import useFetchList from "../hooks/useFetchList";
+import useQuery from "../hooks/useQuery";
 
 const ListTasks = () => {
-	const [tasks, setTasks] = useState([]);
-
-	const fetchTasks = async () => {
-		try {
-			const { data } = await getTasks();
-			setTasks(data);
-		} catch (error) {
-			console.log(error);
-		}
-	};
-
-	useEffect(() => {
-		fetchTasks();
-	}, []);
-
+	const [query, updateQuery, resetQuery] = useQuery();
+	const [data, loading, error, fetchData] = useFetchList("tasks", query);
 	const handleDelete = async (id) => {
 		try {
 			if (confirm("Are you sure?")) {
 				await deleteTask(id);
-				fetchTasks();
+				fetchData();
 				toast.success("Delete successfully!");
 			}
 		} catch (error) {
@@ -37,7 +25,7 @@ const ListTasks = () => {
 		try {
 			const res = await updateTask(id, { completed: !completed });
 			console.log(res);
-			fetchTasks();
+			fetchData();
 			toast.success("Change status successfully");
 		} catch (error) {
 			console.log(error);
@@ -68,7 +56,7 @@ const ListTasks = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{tasks.map((item, index) => (
+					{data.map((item, index) => (
 						<tr key={index}>
 							<td>{index + 1}</td>
 							<td>
