@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "./Header";
+import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
 
-const ClientLayout = () => {
+const Layout = () => {
 	return (
 		<>
 			<Header />
@@ -15,4 +15,4 @@ const ClientLayout = () => {
 	);
 };
 
-export default ClientLayout;
+export default Layout;

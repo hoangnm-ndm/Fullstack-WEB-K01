@@ -1,8 +1,14 @@
+import { ToastContainer } from "react-toastify";
 import "./App.css";
-import AppRouter from "./router";
+import Routes from "./router";
 
 function App() {
-	return <AppRouter />;
+	return (
+		<>
+			<Routes />
+			<ToastContainer />
+		</>
+	);
 }
 
 export default App;

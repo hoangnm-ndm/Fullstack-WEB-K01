@@ -1,43 +1,28 @@
 {
-  "products": [
+  "tasks": [
     {
-      "title": "ten sanpham",
-      "description": "mo ta cho san pham",
-      "id": 1
+      "id": 1,
+      "title": "Task 1",
+      "description": "Description for Task 1",
+      "completed": true,
+      "priority": "high",
+      "dueDate": "2023-10-01T12:00:00Z"
     },
     {
-      "title": "ten san pham",
-      "description": "mo ta",
-      "id": 2
+      "id": 2,
+      "title": "Task 2",
+      "description": "Description for Task 2",
+      "completed": false,
+      "priority": "medium",
+      "dueDate": "2023-10-02T12:00:00Z"
     },
     {
-      "title": "them san pham",
-      "description": "mo ta",
-      "id": 3
-    },
-    {
-      "title": "Iphone 15 pro max",
-      "price": 2000,
-      "description": "iphone",
-      "id": 4
-    },
-    {
-      "title": "Iphone 16 pro max",
-      "price": 2000,
-      "description": "iphone",
-      "id": 5
-    },
-    {
-      "title": "airpod 3 pro",
-      "price": 200,
-      "description": "mo ta",
-      "id": 6
-    },
-    {
-      "title": "man hinh 4k attas",
-      "price": 1000,
-      "description": "mo ta",
-      "id": 7
+      "id": 3,
+      "title": "Task 3",
+      "description": "Description for Task 3",
+      "completed": false,
+      "priority": "low",
+      "dueDate": null
     }
   ]
 }
