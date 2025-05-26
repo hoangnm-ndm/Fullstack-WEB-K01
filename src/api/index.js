@@ -8,7 +8,7 @@ const api = axios.create({
 });
 
 export const createTask = (taskData) => api.post("/tasks", taskData);
-export const getTasks = () => api.get("/tasks");
+export const getTasks = (queryString = "") => api.get(`/tasks?${queryString}`);
 export const getTask = (id) => api.get(`/tasks/${id}`);
 export const deleteTask = (id) => api.delete(`/tasks/${id}`);
 export const updateTask = (id, taskData) => api.patch(`/tasks/${id}`, taskData);

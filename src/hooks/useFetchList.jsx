@@ -9,7 +9,10 @@ const useFetchList = (path, query) => {
 	const fetchData = async () => {
 		try {
 			setLoading(true);
-			const res = await getTasks();
+			const queryString = new URLSearchParams(query).toString();
+			console.log(queryString);
+			const res = await getTasks(queryString);
+			console.log(res);
 			setData(res.data);
 			setLoading(false);
 		} catch (error) {

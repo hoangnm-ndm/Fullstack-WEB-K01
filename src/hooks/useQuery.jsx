@@ -1,15 +1,29 @@
 import { useState } from "react";
 
 const initQuery = {
-	_page: 1,
-	_per_page: 10,
-	_sort: "id",
+	page: 1,
+	per_page: 10,
+	sort: "id",
+	priority: "",
+	conpleted: null,
 };
+
+// http://localhost:3000/tasks?priority=high
 
 const useQuery = (newQuery = initQuery) => {
 	const [query, setQuery] = useState(newQuery);
 	const updateQuery = (newQuery) => {
-		setQuery((prev) => ({ ...prev, ...newQuery }));
+		setQuery((prev) => {
+			const updated = { ...prev, ...newQuery };
+
+			Object.keys(updated).forEach((key) => {
+				if (updated[key] === "" || updated[key] == null) {
+					delete updated[key];
+				}
+			});
+
+			return updated;
+		});
 	};
 
 	const resetQuery = () => {

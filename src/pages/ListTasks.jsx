@@ -33,6 +33,16 @@ const ListTasks = () => {
 		}
 	};
 
+	const handlePriority = (e) => {
+		const value = e.target.value;
+		console.log(value);
+		if (value) {
+			updateQuery({ priority: value });
+		} else {
+			updateQuery({ priority: "" });
+		}
+	};
+
 	return (
 		<div>
 			<Link className="btn btn-primary" to="/add">
@@ -44,7 +54,7 @@ const ListTasks = () => {
 						<td>No.</td>
 						<td>Title</td>
 						<td>
-							<select className="form-select" name="priority" id="">
+							<select className="form-select" name="priority" onChange={handlePriority}>
 								<option value="">Priority</option>
 								<option value="high">High</option>
 								<option value="medium">Medium</option>
