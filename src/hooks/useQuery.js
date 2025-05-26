@@ -1,14 +1,13 @@
 import { useState } from "react";
 
 const inititalParams = {
-	search: "",
-	sortBy: "price",
-	order: "asc",
-	limit: 12,
-	page: 1,
+	// sortBy: "price",
+	// order: "asc",
+	// limit: 12,
+	// page: 1,
 };
 
-const useQuery = (query) => {
+const useQuery = (query = inititalParams) => {
 	const [params, setParams] = useState(query);
 
 	const resetParams = () => {

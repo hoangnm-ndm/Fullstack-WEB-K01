@@ -9,12 +9,11 @@ const useFetchList = (path, query) => {
 	const fetchList = async () => {
 		try {
 			setLoading(true);
-			console.log(query);
-			const skip = (query.page - 1) * query.limit;
-			query.skip = skip;
 			let queryString = new URLSearchParams(query).toString();
-			const { data } = await api.get(`${path}/search?${queryString}`);
-			setList(data[path]);
+			console.log(`${path}?${queryString}`);
+			const { data } = await api.get(`${path}?${queryString}`);
+			console.log(data);
+			setList(data);
 			setLoading(false);
 		} catch (error) {
 			setLoading(false);
@@ -25,7 +24,7 @@ const useFetchList = (path, query) => {
 
 	useEffect(() => {
 		fetchList();
-	}, [query.limit, query.page]);
+	}, [JSON.stringify(query)]);
 	return [list, loading, error];
 };
 
