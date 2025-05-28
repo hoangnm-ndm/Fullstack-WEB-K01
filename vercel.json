@@ -1,8 +1,7 @@
 {
 	"rewrites": [
 		{
-			"source": "/api/:path*",
-			"destination": "https://codefarm-json-server-web01-6mnx.onrender.com/:path*"
+			"source": "/(.*)"
 		}
 	]
 }
