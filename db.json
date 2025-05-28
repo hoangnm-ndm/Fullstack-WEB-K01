@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Task 1",
       "description": "Description for Task 1",
-      "completed": true,
+      "completed": false,
       "priority": "high",
       "dueDate": "2023-10-01T12:00:00Z"
     },
