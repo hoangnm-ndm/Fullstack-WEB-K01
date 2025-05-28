@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import RegisterPage from "../pages/register/RegisterPage";
 import LoginPage from "../pages/LoginPage";
 import AboutPage from "../pages/AboutPage";
 import ClientLayout from "../layouts/ClientLayout";
@@ -14,6 +13,7 @@ import SettingsPage from "../pages/admin/SettingsPage";
 import CategoriesPage from "../pages/CategoriesPage";
 import ProductListPage from "../pages/admin/ProductListPage";
 import ProductForm from "../pages/admin/ProductForm";
+import RegisterPage from "../pages/RegisterPage";
 
 const router = createBrowserRouter([
 	// * Layout Client
