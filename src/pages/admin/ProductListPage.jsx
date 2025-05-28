@@ -24,7 +24,7 @@ const ProductListPage = () => {
 				</thead>
 				<tbody>
 					{list &&
-						list.map((item) => (
+						list.map((item, index) => (
 							<tr key={item.id}>
 								<td>{index}</td>
 								<td>{item.title}</td>
