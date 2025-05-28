@@ -18,13 +18,14 @@ const RegisterPage = () => {
 
 	const onSubmit = async (data) => {
 		try {
+			delete data.confirmPassword;
 			const res = await registerApi(data);
 			console.log(res);
 			reset();
 			toast.success("Register successfully!");
 		} catch (error) {
 			console.log(error);
-			toast.error(error.response.data || "Dang ky that bai!");
+			toast.error(error.response.data || "Register failed!");
 			reset();
 		}
 	};
@@ -66,7 +67,7 @@ const RegisterPage = () => {
 				</div>
 
 				<div className="mb-3">
-					You have an account? <Link to={`auth/login`}>Login now!</Link>
+					You have an account? <Link to={`/auth/login`}>Login now!</Link>
 				</div>
 
 				<div className="mb-3">

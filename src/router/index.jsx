@@ -14,6 +14,8 @@ import CategoriesPage from "../pages/CategoriesPage";
 import ProductListPage from "../pages/admin/ProductListPage";
 import ProductForm from "../pages/admin/ProductForm";
 import RegisterPage from "../pages/RegisterPage";
+import ProtectedRoute from "../components/ProtectedRoute";
+import ProfilePage from "../pages/ProfilePage";
 
 const router = createBrowserRouter([
 	// * Layout Client
@@ -24,21 +26,28 @@ const router = createBrowserRouter([
 			{ index: true, element: <HomePage /> },
 			{ path: "/about", element: <AboutPage /> },
 			{ path: "/categories", element: <CategoriesPage /> },
+			{ path: "/profile/me/:id", element: <ProfilePage /> },
 		],
 	},
 
 	// * Layout Admin
 	{
 		path: "/admin",
-		element: <AdminLayout />,
+		element: <ProtectedRoute />,
 		children: [
-			{ index: true, element: <DashBoardPage /> },
-			{ path: "products", element: <ProductListPage /> },
-			{ path: "products/add", element: <ProductForm /> },
-			{ path: "orders", element: <OrderListPage /> },
-			{ path: "blogs", element: <BlogListPage /> },
-			{ path: "users", element: <UserListPage /> },
-			{ path: "settings", element: <SettingsPage /> },
+			{
+				path: "",
+				element: <AdminLayout />,
+				children: [
+					{ index: true, element: <DashBoardPage /> },
+					{ path: "products", element: <ProductListPage /> },
+					{ path: "products/add", element: <ProductForm /> },
+					{ path: "orders", element: <OrderListPage /> },
+					{ path: "blogs", element: <BlogListPage /> },
+					{ path: "users", element: <UserListPage /> },
+					{ path: "settings", element: <SettingsPage /> },
+				],
+			},
 		],
 	},
 
