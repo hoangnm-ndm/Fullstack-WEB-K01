@@ -5,8 +5,6 @@
 } */
 
 header {
-	background-color: black;
-	color: #fff;
 	padding: 24px 0;
 }
 
@@ -22,8 +20,6 @@ main {
 }
 
 footer {
-	background-color: blue;
-	color: #eee;
 	padding: 24px 0;
 	text-align: center;
 }

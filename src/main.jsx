@@ -2,13 +2,10 @@ import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-
-export const UserContext = createContext(null);
-
-const data = { tivi: "3 chiec", dat: "3 so do" };
+import ThemeProvider from "./contexts/ThemeContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<UserContext.Provider value={data}>
+	<ThemeProvider>
 		<App />
-	</UserContext.Provider>
+	</ThemeProvider>
 );

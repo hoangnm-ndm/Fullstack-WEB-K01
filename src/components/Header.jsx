@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import ToggleTheme from "./ToggleTheme";
 
 const Header = () => {
 	return (
 		<header>
 			<p>logo</p>
+			<ToggleTheme />
 			<nav>
 				<ul>
 					<li>
