@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getProfile } from "../api/authApi";
+import { getProfile } from "../../api/authApi";
 import { useParams } from "react-router-dom";
 
 const ProfilePage = () => {

@@ -1,33 +1,19 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import LoginPage from "../pages/LoginPage";
-import AboutPage from "../pages/AboutPage";
-import ClientLayout from "../layouts/ClientLayout";
-import NotFoundPage from "../pages/NotFoundPage";
 import AdminLayout from "../layouts/AdminLayout";
-import DashBoardPage from "../pages/admin/DashBoardPage";
-import OrderListPage from "../pages/admin/OrderListPage";
-import BlogListPage from "../pages/admin/BlogListPage";
-import UserListPage from "../pages/admin/UserListPage";
-import SettingsPage from "../pages/admin/SettingsPage";
-import CategoriesPage from "../pages/CategoriesPage";
-import ProductListPage from "../pages/admin/ProductListPage";
-import ProductForm from "../pages/admin/ProductForm";
-import RegisterPage from "../pages/RegisterPage";
+import ClientLayout from "../layouts/ClientLayout";
 import ProtectedRoute from "../components/ProtectedRoute";
-import ProfilePage from "../pages/ProfilePage";
+import adminRoutes from "./adminRoutes";
+import clientRoutes from "./clientRoutes";
+import LoginPage from "../pages/common/LoginPage";
+import RegisterPage from "../pages/common/RegisterPage";
+import NotFoundPage from "../pages/common/NotFoundPage";
 
 const router = createBrowserRouter([
 	// * Layout Client
 	{
 		path: "/",
 		element: <ClientLayout />,
-		children: [
-			{ index: true, element: <HomePage /> },
-			{ path: "/about", element: <AboutPage /> },
-			{ path: "/categories", element: <CategoriesPage /> },
-			{ path: "/profile/me/:id", element: <ProfilePage /> },
-		],
+		children: clientRoutes,
 	},
 
 	// * Layout Admin
@@ -38,15 +24,7 @@ const router = createBrowserRouter([
 			{
 				path: "",
 				element: <AdminLayout />,
-				children: [
-					{ index: true, element: <DashBoardPage /> },
-					{ path: "products", element: <ProductListPage /> },
-					{ path: "products/add", element: <ProductForm /> },
-					{ path: "orders", element: <OrderListPage /> },
-					{ path: "blogs", element: <BlogListPage /> },
-					{ path: "users", element: <UserListPage /> },
-					{ path: "settings", element: <SettingsPage /> },
-				],
+				children: adminRoutes,
 			},
 		],
 	},

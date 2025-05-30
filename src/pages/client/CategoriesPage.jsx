@@ -1,6 +1,6 @@
 import React from "react";
-import useQuery from "../hooks/useQuery";
-import useFetchList from "../hooks/useFetchList";
+import useQuery from "../../hooks/useQuery";
+import useFetchList from "../../hooks/useFetchList";
 
 const CategoriesPage = () => {
 	const [query, updateQuery, resetQuery] = useQuery({

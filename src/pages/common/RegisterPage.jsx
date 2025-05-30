@@ -2,9 +2,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { registerSchema } from "../validations/authSchema";
+import { registerSchema } from "../../validations/authSchema";
 import { toast } from "react-toastify";
-import { registerApi } from "../api/authApi";
+import { registerApi } from "../../api/authApi";
 
 const RegisterPage = () => {
 	const {
