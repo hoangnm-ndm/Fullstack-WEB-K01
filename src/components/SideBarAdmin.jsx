@@ -39,15 +39,27 @@ const SiderBarAdmin = ({ collapsed, onToggle }) => {
 			<ToggleButton collapsed={collapsed} onClick={onToggle}>
 				{collapsed ? <FiChevronRight /> : <FiChevronLeft />}
 			</ToggleButton>
+
 			<MenuItem collapsed={collapsed}>
 				<NavLink to="">Dashboard</NavLink>
 			</MenuItem>
+
 			<MenuItem collapsed={collapsed}>
 				<NavLink to="users">Users</NavLink>
 			</MenuItem>
+
 			<MenuItem collapsed={collapsed}>
 				<NavLink to="products">Products</NavLink>
 			</MenuItem>
+
+			<MenuItem collapsed={collapsed}>
+				<NavLink to="orders">Orders</NavLink>
+			</MenuItem>
+
+			<MenuItem collapsed={collapsed}>
+				<NavLink to="blogs">Blogs</NavLink>
+			</MenuItem>
+
 			<MenuItem collapsed={collapsed}>
 				<NavLink to="settings">Settings</NavLink>
 			</MenuItem>

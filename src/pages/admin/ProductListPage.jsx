@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useFetchList from "../../hooks/useFetchList";
 
-const inititalProduct = {};
-
 const ProductListPage = () => {
 	const [list, loading, error] = useFetchList("products", {});
 	console.log(list);
