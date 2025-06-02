@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
 import CartModal from "./CartModal";
+import OtherPage from "../pages/OtherPage";
 
 const Header = () => {
 	const { state } = useContext(CartContext);
@@ -10,6 +11,7 @@ const Header = () => {
 	return (
 		<div>
 			<div>Header</div>
+			<OtherPage />
 			<button className="btn btn-primary" onClick={() => setShowModal(!showModal)}>
 				Gio hang: {countProduct}
 			</button>

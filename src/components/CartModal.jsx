@@ -18,7 +18,7 @@ const CartModal = () => {
 		<Cart>
 			<div>
 				{state.cart.map((item) => (
-					<div>
+					<div key={item.id}>
 						<h3>{item.title}</h3>
 						<p>{item.price}</p>
 						<p>{item.quantity}</p>
