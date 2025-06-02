@@ -1,11 +1,11 @@
 # Các công việc dự án module C
 
-[] Phân tích yêu cầu và tìm hiểu thiết kế. - 2/6
-[] Cài đặt các thư viện cần thiết - 2/6
-[] Xây dựng project base: routing, utils, hooks, common components - 2/6
-[] Trang đăng ký, đăng nhập - 2/6
-[] Trang chủ admin - 2/6
-[] Đọc thêm sửa xoá sản phẩm - 2/6
+[x] Phân tích yêu cầu và tìm hiểu thiết kế. - 2/6
+[x] Cài đặt các thư viện cần thiết - 2/6
+[x] Xây dựng project base: routing, utils, hooks, common components - 2/6
+[x] Trang đăng ký, đăng nhập - 2/6
+[x] Trang chủ admin - 2/6
+[x] Đọc thêm sửa xoá sản phẩm - 2/6
 
 [] Trang Home - 4/6
 
