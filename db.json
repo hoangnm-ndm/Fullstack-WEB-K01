@@ -1,20 +1,48 @@
 {
-  "tasks": [
-    {
-      "id": 1,
-      "title": "Task 1",
-      "description": "Description for Task 1",
-      "completed": false,
-      "priority": "high",
-      "dueDate": "2023-10-01T12:00:00Z"
-    },
-    {
-      "id": 3,
-      "title": "Task 3",
-      "description": "Description for Task 3",
-      "completed": false,
-      "priority": "low",
-      "dueDate": null
-    }
-  ]
+	"tasks": [
+		{
+			"id": 1,
+			"title": "Task 1",
+			"description": "Description for Task 1",
+			"completed": false,
+			"priority": "high",
+			"dueDate": "2023-10-01T12:00:00Z"
+		},
+		{
+			"id": 3,
+			"title": "Task 3",
+			"description": "Description for Task 3",
+			"completed": false,
+			"priority": "low",
+			"dueDate": null
+		}
+	],
+	"products": [
+		{
+			"id": 1,
+			"title": "Product 1",
+			"description": "Description for Product 1",
+			"price": 19.99,
+			"inStock": true
+		},
+		{
+			"id": 2,
+			"title": "Product 2",
+			"description": "Description for Product 2",
+			"price": 29.99,
+			"inStock": false
+		}
+	],
+	"cart": [
+		{
+			"id": 1,
+			"productId": 1,
+			"quantity": 2
+		},
+		{
+			"id": 2,
+			"productId": 2,
+			"quantity": 1
+		}
+	]
 }

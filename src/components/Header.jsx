@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../contexts/CartContext";
 
 const Header = () => {
-	return <div>Header</div>;
+	const { state, dispatch } = useContext(CartContext);
+	console.log(state);
+	return (
+		<div>
+			<div>Header</div>
+			<div>Gio hang: {}</div>
+		</div>
+	);
 };
 
 export default Header;
