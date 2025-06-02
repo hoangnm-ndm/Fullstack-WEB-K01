@@ -1,13 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
+import CartModal from "./CartModal";
 
 const Header = () => {
-	const { state, dispatch } = useContext(CartContext);
-	console.log(state);
+	const { state } = useContext(CartContext);
+	const [showModal, setShowModal] = useState(false);
+	const countProduct = state.cart.reduce((acc, cur) => (acc += cur.quantity), 0);
+
 	return (
 		<div>
 			<div>Header</div>
-			<div>Gio hang: {}</div>
+			<button className="btn btn-primary" onClick={() => setShowModal(!showModal)}>
+				Gio hang: {countProduct}
+			</button>
+			{showModal && <CartModal />}
 		</div>
 	);
 };
